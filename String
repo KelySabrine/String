@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    char string[100];
+    int i, length = 0;
+
+    printf("Digite uma string (maximo 99 caracteres): ");
+    fgets(string, sizeof(string), stdin);
+
+    while (string[length] != '\0') {
+        if (string[length] == '\n') {
+            string[length] = '\0';
+            break;
+        }
+        length++;
+    }
+
+    printf("String invertida: ");
+    for (i = length - 1; i >= 0; i--) {
+        putchar(string[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
